@@ -1,5 +1,31 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Button } from 'reactstrap';
+import styled from 'styled-components';
+
+const CustomH1 = styled.h1`
+    color: white;
+    font-weight: bold;
+    font-size: 1rem; 
+`
+const PTag = styled.p`
+    color: white;
+    font-size: 0.5rem;
+`
+const CustomImg = styled.img`
+    width: 60%;
+    height: 300px;
+    border-radius: 25px;
+`
+const ExplainP = styled.p`
+    color: white;
+    width: 90%;
+    margin: auto;
+    fontSize: 1rem;
+    font-size: 0.5rem;
+
+`
+
 
 const Picture = () => {
   const [picUrl, setPicUrl] = useState("");
@@ -28,15 +54,14 @@ const Picture = () => {
 
   return (
     <div>
-      <p style={{ color: "white", "fontSize": "0.5rem" }}>{date}</p>
-      <img
+      <PTag>{date}</PTag>
+      <CustomImg
         src={picUrl}
-        alt="Nasa astronomy pic of the day"
-        style={{ width: "60%", height: "300px" }}
-      />
-      <p style={{ color: "white", "fontWeight": "bold" }}>{title}</p>
-      <p style={{ color: "white", "width": "90%", "margin": "auto", "fontSize": "1rem" }}>{explain}</p>
-    </div>
+        alt="Nasa astronomy pic of the day"></CustomImg>
+      <CustomH1>{title}</CustomH1>
+      <ExplainP>{explain}</ExplainP>;
+      </div>
+
   );
 };
 export default Picture;

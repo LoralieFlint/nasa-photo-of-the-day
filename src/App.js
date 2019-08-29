@@ -1,20 +1,25 @@
 import React from "react";
 import "./App.css";
-import  Body  from "./Body";
-// import  TodayDate  from "./TodayDate";
+import Body from "./Body";
+import styled from 'styled-components';
 
+
+const BackGround = styled.div`
+    background-color: black;
+    height: 900px;
+`
+const Heading = styled.h1`
+    font-size: 1.0rem; 
+    color: white;
+`
 
 
 function App() {
   return (
-    <div style={{ "backgroundColor": "black", "height": "900px" }} className="App">
-      <h1 style={{ "fontSize": "1.0rem", "color": "white" }}>
-      NASA Photo of the Day!
-      </h1>
-      {/* <TodayDate /> */}
-      <Body />    
-    </div>
-    
+    <BackGround className="App">
+      <Heading>NASA Photo of the Day!</Heading>
+      <Body />
+    </BackGround>
   );
 }
 
